@@ -9,5 +9,9 @@ module.exports = function(server){
 //rotas da api
 
 const billingCycleService = require('../api/billingCycle/billingCycleService');
-billingCycleService.register(router, '/billingCycles');
+billingCycleService.register(router, '/billingCycle');
+
+const billingSummaryService = require('../api/billingSummary/billingSummaryService')
+router.route('/billingSummary').get(billingSummaryService.getSummary)
+
 }
